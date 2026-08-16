@@ -32,7 +32,7 @@ function Page() {
           <ApprovalQueue selectedId={selectedId} onSelect={setSelectedId} />
         </div>
         <div className="panel overflow-hidden p-5">
-          <ApprovalReview item={selectedItem} />
+          <ApprovalReview item={item} />
         </div>
       </div>
     </DashboardShell>
