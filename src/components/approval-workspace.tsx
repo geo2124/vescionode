@@ -137,6 +137,11 @@ export function ApprovalQueue({ selectedId, onSelect }: ApprovalQueueProps) {
 }
 
 export function ApprovalReview({ item }: { item: ApprovalItem }) {
+  const [draft, setDraft] = useState(item.draft);
+
+  // Reset draft when the selected item changes.
+  useState(() => setDraft(item.draft));
+
   return (
     <div className="flex h-full flex-col">
       <div className="mb-5">
