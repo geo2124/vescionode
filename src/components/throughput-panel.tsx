@@ -32,17 +32,18 @@ export function ThroughputPanel() {
         </div>
       </div>
 
-      <div className="mt-7 flex h-44 items-end gap-3">
+      <div className="mt-7 flex h-44 gap-3">
         {bars.map((bar) => (
           <div key={bar.day} className="flex flex-1 flex-col items-center gap-2">
-            <div className="flex h-full w-full flex-col justify-end gap-1">
+            <div className="flex w-full flex-1 flex-col justify-end gap-1">
+              <div className="w-full" style={{ flex: `${max - bar.ai - bar.human} 0 0%` }} />
               <div
-                className="w-full shrink-0 rounded-t-sm bg-border"
-                style={{ height: `${(bar.human / max) * 100}%` }}
+                className="w-full rounded-t-sm bg-border"
+                style={{ flex: `${bar.human} 0 0%` }}
               />
               <div
-                className="w-full shrink-0 rounded-b-sm bg-primary/80 transition-colors hover:bg-primary"
-                style={{ height: `${(bar.ai / max) * 100}%` }}
+                className="w-full rounded-b-sm bg-primary/80 transition-colors hover:bg-primary"
+                style={{ flex: `${bar.ai} 0 0%` }}
               />
             </div>
             <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
