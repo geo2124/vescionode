@@ -10,33 +10,80 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AiWorkforceRouteImport } from './routes/ai-workforce'
+import { Route as DepartmentsRouteImport } from './routes/departments'
+import { Route as HumanApprovalsRouteImport } from './routes/human-approvals'
+import { Route as SettingsRouteImport } from './routes/settings'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiWorkforceRoute = AiWorkforceRouteImport.update({
+  id: '/ai-workforce',
+  path: '/ai-workforce',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DepartmentsRoute = DepartmentsRouteImport.update({
+  id: '/departments',
+  path: '/departments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HumanApprovalsRoute = HumanApprovalsRouteImport.update({
+  id: '/human-approvals',
+  path: '/human-approvals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-workforce': typeof AiWorkforceRoute
+  '/departments': typeof DepartmentsRoute
+  '/human-approvals': typeof HumanApprovalsRoute
+  '/settings': typeof SettingsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-workforce': typeof AiWorkforceRoute
+  '/departments': typeof DepartmentsRoute
+  '/human-approvals': typeof HumanApprovalsRoute
+  '/settings': typeof SettingsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-workforce': typeof AiWorkforceRoute
+  '/departments': typeof DepartmentsRoute
+  '/human-approvals': typeof HumanApprovalsRoute
+  '/settings': typeof SettingsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/ai-workforce' | '/departments' | '/human-approvals' | '/settings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/ai-workforce' | '/departments' | '/human-approvals' | '/settings'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-workforce'
+    | '/departments'
+    | '/human-approvals'
+    | '/settings'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiWorkforceRoute: typeof AiWorkforceRoute
+  DepartmentsRoute: typeof DepartmentsRoute
+  HumanApprovalsRoute: typeof HumanApprovalsRoute
+  SettingsRoute: typeof SettingsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +95,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-workforce': {
+      id: '/ai-workforce'
+      path: '/ai-workforce'
+      fullPath: '/ai-workforce'
+      preLoaderRoute: typeof AiWorkforceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/departments': {
+      id: '/departments'
+      path: '/departments'
+      fullPath: '/departments'
+      preLoaderRoute: typeof DepartmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/human-approvals': {
+      id: '/human-approvals'
+      path: '/human-approvals'
+      fullPath: '/human-approvals'
+      preLoaderRoute: typeof HumanApprovalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiWorkforceRoute: AiWorkforceRoute,
+  DepartmentsRoute: DepartmentsRoute,
+  HumanApprovalsRoute: HumanApprovalsRoute,
+  SettingsRoute: SettingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
