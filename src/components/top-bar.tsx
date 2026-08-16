@@ -20,11 +20,11 @@ export function TopBar() {
         <span className="font-medium text-foreground">Workspace</span>
       </nav>
 
-      <div className="mx-auto w-full max-w-md">
+      <div className="mx-auto w-full min-w-0 max-w-md">
         <CommandBar />
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex shrink-0 items-center gap-2">
         <ThemeToggle />
         <button className="hidden items-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:flex">
           <Plus className="h-3.5 w-3.5" />
