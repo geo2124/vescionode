@@ -5,37 +5,31 @@ import { DashboardShell } from "@/components/dashboard-shell";
 export const Route = createFileRoute("/human-approvals")({
   head: () => ({
     meta: [
-      { title: "Human Approvals — Vescio Forge" },
-      {
-        name: "description",
-        content: "Review and approve AI-driven decisions.",
-      },
+      { title: "Human Approvals — Vescio Node" },
+      { name: "description", content: "Decisions escalated by agents that require an accountable human sign-off." },
+      { property: "og:title", content: "Human Approvals — Vescio Node" },
+      { property: "og:description", content: "Decisions escalated by agents that require an accountable human sign-off." },
     ],
   }),
-  component: HumanApprovals,
+  component: Page,
 });
 
-function HumanApprovals() {
+function Page() {
   return (
-    <DashboardShell>
-      <div className="flex flex-1 flex-col overflow-hidden">
-        <div className="border-b border-slate-800 px-6 py-4">
-          <h1 className="text-lg font-semibold text-slate-100">
-            Human Approvals
-          </h1>
-          <p className="text-xs text-slate-500">
-            Pending decisions requiring human oversight
-          </p>
+    <DashboardShell eyebrow="Governance" title="Human Approvals" description="Decisions escalated by agents that require an accountable human sign-off.">
+      <div className="panel flex flex-col items-center justify-center px-6 py-20 text-center">
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-sm font-semibold text-primary">
+          VN
         </div>
-        <div className="flex-1 overflow-auto p-6">
-          <div className="mx-auto max-w-6xl">
-            <div className="rounded-lg border border-slate-800 bg-slate-900 p-8">
-              <p className="text-sm text-slate-400">
-                No approvals pending. The human approval queue is empty.
-              </p>
-            </div>
-          </div>
-        </div>
+        <h2 className="mt-4 font-display text-base font-semibold text-foreground">
+          The approvals queue is being provisioned
+        </h2>
+        <p className="mt-1.5 max-w-sm text-sm text-muted-foreground">
+          This module is part of the next release wave. Your data and agents are already connected.
+        </p>
+        <button className="mt-5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90">
+          Request early access
+        </button>
       </div>
     </DashboardShell>
   );
