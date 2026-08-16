@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Clock, FileText, Mail, Send, User } from "lucide-react";
 
 export interface ApprovalItem {
