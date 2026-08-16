@@ -39,7 +39,7 @@ export function AppSidebar() {
           <Hexagon className="h-5 w-5 fill-current" />
         </div>
         <span className="text-lg font-semibold tracking-tight text-slate-50">
-          Vescio Forge
+          Vescio Node
         </span>
       </div>
 

@@ -5,7 +5,7 @@ import { DashboardShell } from "@/components/dashboard-shell";
 export const Route = createFileRoute("/human-approvals")({
   head: () => ({
     meta: [
-      { title: "Human Approvals — Vescio Forge" },
+      { title: "Human Approvals — Vescio Node" },
       {
         name: "description",
         content: "Review and approve AI-driven decisions.",

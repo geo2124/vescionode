@@ -7,15 +7,15 @@ import { MetricCards } from "@/components/metric-cards";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Command Center — Vescio Forge" },
+      { title: "Command Center — Vescio Node" },
       {
         name: "description",
-        content: "Command Center dashboard for Vescio Forge.",
+        content: "Command Center dashboard for Vescio Node.",
       },
-      { property: "og:title", content: "Command Center — Vescio Forge" },
+      { property: "og:title", content: "Command Center — Vescio Node" },
       {
         property: "og:description",
-        content: "Command Center dashboard for Vescio Forge.",
+        content: "Command Center dashboard for Vescio Node.",
       },
     ],
   }),

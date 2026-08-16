@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vescio Forge" },
+      { title: "Vescio Node" },
       { name: "description", content: "AI-native Business-as-a-Service operating system" },
-      { name: "author", content: "Vescio Forge" },
-      { property: "og:title", content: "Vescio Forge" },
+      { name: "author", content: "Vescio Node" },
+      { property: "og:title", content: "Vescio Node" },
       { property: "og:description", content: "AI-native Business-as-a-Service operating system" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@vescioforge" },
+      { name: "twitter:site", content: "@vescionode" },
     ],
     links: [
       {

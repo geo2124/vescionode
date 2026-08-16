@@ -5,7 +5,7 @@ import { DashboardShell } from "@/components/dashboard-shell";
 export const Route = createFileRoute("/ai-workforce")({
   head: () => ({
     meta: [
-      { title: "AI Workforce — Vescio Forge" },
+      { title: "AI Workforce — Vescio Node" },
       {
         name: "description",
         content: "Manage your AI workforce and agents.",

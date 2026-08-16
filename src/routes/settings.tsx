@@ -5,10 +5,10 @@ import { DashboardShell } from "@/components/dashboard-shell";
 export const Route = createFileRoute("/settings")({
   head: () => ({
     meta: [
-      { title: "Settings — Vescio Forge" },
+      { title: "Settings — Vescio Node" },
       {
         name: "description",
-        content: "Configure your Vescio Forge environment.",
+        content: "Configure your Vescio Node environment.",
       },
     ],
   }),

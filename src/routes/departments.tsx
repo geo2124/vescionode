@@ -5,7 +5,7 @@ import { DashboardShell } from "@/components/dashboard-shell";
 export const Route = createFileRoute("/departments")({
   head: () => ({
     meta: [
-      { title: "Departments — Vescio Forge" },
+      { title: "Departments — Vescio Node" },
       {
         name: "description",
         content: "Manage departments across your organization.",
