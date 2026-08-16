@@ -14,7 +14,7 @@ import {
 export function TopBar() {
   return (
     <header className="flex h-16 shrink-0 items-center gap-4 border-b border-hairline bg-surface/70 px-6 backdrop-blur sm:px-8">
-      <nav className="hidden items-center gap-1.5 text-xs text-muted-foreground lg:flex">
+      <nav className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap text-xs text-muted-foreground lg:flex">
         <span>Acme Corp</span>
         <ChevronRight className="h-3 w-3" />
         <span className="font-medium text-foreground">Workspace</span>
