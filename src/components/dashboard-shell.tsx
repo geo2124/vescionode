@@ -20,7 +20,7 @@ export function DashboardShell({
   return (
     <div className="flex h-screen overflow-hidden bg-background text-foreground">
       <AppSidebar />
-      <main className="flex min-w-0 flex-1 flex-col">
+      <main className="flex min-w-0 flex-1 flex-col overflow-hidden">
         <TopBar />
         <div className="flex-1 overflow-y-auto">
           <div className="ambient-grid border-b border-hairline">
@@ -46,7 +46,7 @@ export function DashboardShell({
           <div className="mx-auto max-w-[1180px] px-6 py-7 sm:px-8">{children}</div>
         </div>
       </main>
-      <div className="hidden w-80 shrink-0 md:block xl:w-96">
+      <div className="hidden w-80 shrink-0 xl:block 2xl:w-96">
         <ActivityFeed />
       </div>
     </div>
