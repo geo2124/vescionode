@@ -16,10 +16,13 @@ export const Route = createFileRoute("/human-approvals")({
   component: Page,
 });
 
+function findApproval(id: string) {
+  return approvals.find((a) => a.id === id) ?? approvals[0]!;
+}
+
 function Page() {
-  const [selectedId, setSelectedId] = useState(approvals[0].id);
-  const selectedItem = approvals.find((a) => a.id === selectedId);
-  const item = selectedItem ?? approvals[0];
+  const [selectedId, setSelectedId] = useState(approvals[0]!.id);
+  const item = findApproval(selectedId);
 
   return (
     <DashboardShell
