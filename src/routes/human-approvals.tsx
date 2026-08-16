@@ -1,5 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router'
 import { useState } from "react";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { DashboardShell } from "@/components/dashboard-shell";
 import { ApprovalQueue, ApprovalReview, approvals } from "@/components/approval-workspace";
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/human-approvals")({
 
 function Page() {
   const [selectedId, setSelectedId] = useState(approvals[0].id);
-  const selectedItem = approvals.find((a) => a.id === selectedId) ?? approvals[0];
+  const selectedItem = approvals.find((a) => a.id === selectedId) || approvals[0];
 
   return (
     <DashboardShell
