@@ -46,7 +46,7 @@ export function DashboardShell({
           <div className="mx-auto max-w-[1180px] px-6 py-7 sm:px-8">{children}</div>
         </div>
       </main>
-      <div className="hidden w-[340px] shrink-0 xl:block">
+      <div className="hidden w-80 shrink-0 md:block xl:w-96">
         <ActivityFeed />
       </div>
     </div>
