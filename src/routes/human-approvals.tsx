@@ -1,3 +1,4 @@
+import { createFileRoute } from '@tanstack/react-router'
 import { useState } from "react";
 
 import { DashboardShell } from "@/components/dashboard-shell";

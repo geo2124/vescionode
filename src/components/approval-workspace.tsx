@@ -12,7 +12,7 @@ export interface ApprovalItem {
   draft: string;
 }
 
-const approvals: ApprovalItem[] = [
+export const approvals: ApprovalItem[] = [
   {
     id: "1",
     agent: "Outreach Copywriter",
