@@ -1,24 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { CommandBar } from "@/components/command-bar";
+import { DashboardShell } from "@/components/dashboard-shell";
+import { MetricCards } from "@/components/metric-cards";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Command Center — Vescio Forge" },
+      {
+        name: "description",
+        content: "Command Center dashboard for Vescio Forge.",
+      },
+      { property: "og:title", content: "Command Center — Vescio Forge" },
+      {
+        property: "og:description",
+        content: "Command Center dashboard for Vescio Forge.",
+      },
+    ],
+  }),
+  component: CommandCenter,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function CommandCenter() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <DashboardShell>
+      <div className="flex flex-1 flex-col overflow-hidden">
+        <div className="border-b border-slate-800 px-6 py-4">
+          <h1 className="text-lg font-semibold text-slate-100">Command Center</h1>
+          <p className="text-xs text-slate-500">
+            Unified operations overview for Acme Corp
+          </p>
+        </div>
+        <div className="flex-1 overflow-auto p-6">
+          <div className="mx-auto max-w-6xl space-y-6">
+            <CommandBar />
+            <MetricCards />
+            <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
+              <h2 className="text-sm font-semibold text-slate-200">
+                Operational Summary
+              </h2>
+              <p className="mt-2 text-sm text-slate-400">
+                All AI agents and human workflows are operating within normal
+                parameters. No critical approvals pending.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </DashboardShell>
   );
 }
