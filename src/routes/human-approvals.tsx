@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { DashboardShell } from "@/components/dashboard-shell";
+import { ApprovalQueue, ApprovalReview, approvals } from "@/components/approval-workspace";
 
 export const Route = createFileRoute("/human-approvals")({
   head: () => ({
@@ -14,22 +16,27 @@ export const Route = createFileRoute("/human-approvals")({
   component: Page,
 });
 
+function findApproval(id: string) {
+  return approvals.find((a) => a.id === id) ?? approvals[0]!;
+}
+
 function Page() {
+  const [selectedId, setSelectedId] = useState(approvals[0]!.id);
+  const item = findApproval(selectedId);
+
   return (
-    <DashboardShell eyebrow="Governance" title="Human Approvals" description="Decisions escalated by agents that require an accountable human sign-off.">
-      <div className="panel flex flex-col items-center justify-center px-6 py-20 text-center">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-sm font-semibold text-primary">
-          VN
+    <DashboardShell
+      eyebrow="Govern"
+      title="Human Approvals"
+      description="Decisions escalated by agents that require an accountable human sign-off."
+    >
+      <div className="grid h-[calc(100vh-220px)] min-h-[540px] gap-5 lg:grid-cols-[360px_1fr] xl:grid-cols-[380px_1fr]">
+        <div className="panel overflow-hidden p-4">
+          <ApprovalQueue selectedId={selectedId} onSelect={setSelectedId} />
         </div>
-        <h2 className="mt-4 font-display text-base font-semibold text-foreground">
-          The approvals queue is being provisioned
-        </h2>
-        <p className="mt-1.5 max-w-sm text-sm text-muted-foreground">
-          This module is part of the next release wave. Your data and agents are already connected.
-        </p>
-        <button className="mt-5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90">
-          Request early access
-        </button>
+        <div className="panel overflow-hidden p-5">
+          <ApprovalReview item={item} />
+        </div>
       </div>
     </DashboardShell>
   );
