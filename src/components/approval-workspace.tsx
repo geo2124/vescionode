@@ -179,6 +179,7 @@ export function ApprovalReview({ item }: { item: ApprovalItem }) {
             ))}
           </div>
           <textarea
+            key={item.id}
             defaultValue={item.draft}
             className="flex-1 resize-none bg-surface p-4 text-[13px] leading-6 text-foreground outline-none placeholder:text-muted-foreground"
             spellCheck={false}
