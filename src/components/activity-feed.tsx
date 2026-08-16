@@ -12,8 +12,8 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const activities = [
-  { id: 1, icon: Search, actor: "Research Agent", text: "qualified lead", target: "Nexus Analytics", time: "00:12", tone: "primary" },
-  { id: 2, icon: Mail, actor: "Sales Agent", text: "drafted email", target: "Follow-up sequence", time: "01:04", tone: "primary" },
+  { id: 1, icon: Search, actor: "Research Agent", text: "qualified", target: "Acme Corp", time: "09:12", tone: "primary" },
+  { id: 2, icon: Mail, actor: "Sales Agent", text: "drafted outreach", target: "Follow-up sequence", time: "09:04", tone: "primary" },
   { id: 3, icon: CheckCircle2, actor: "Ops Agent", text: "completed task", target: "Contract review #4821", time: "02:38", tone: "positive" },
   { id: 4, icon: UserCheck, actor: "System", text: "requested approval", target: "Q3 budget forecast", time: "04:11", tone: "warning" },
   { id: 5, icon: FileText, actor: "Finance Agent", text: "reconciled report", target: "Monthly close", time: "06:25", tone: "primary" },
@@ -36,7 +36,7 @@ export function ActivityFeed() {
       <div className="flex items-center justify-between border-b border-hairline px-5 py-[18px]">
         <div>
           <h2 className="font-display text-sm font-semibold text-foreground">
-            Live Activity
+            Live Activity Log
           </h2>
           <p className="text-[11px] text-muted-foreground">System event stream</p>
         </div>
